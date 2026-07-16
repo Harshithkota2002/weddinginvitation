@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /d/zharshaproj/website)",
+      "Read(//d/zharshaproj/**)",
+      "Bash(npm --version)",
+      "Bash(npx --yes create-next-app@latest . --ts --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --use-npm --yes)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/manifest.webmanifest)",
+      "Bash(echo \"manifest: $\\(curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/manifest.webmanifest\\)\")",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/icon.svg)",
+      "Bash(echo \"icon: $\\(curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/icon.svg\\)\")",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/sw.js)",
+      "PowerShell($conns = Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue; if \\($conns\\) { $conns | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { $p = Get-Process -Id $_ -ErrorAction SilentlyContinue; if \\($p\\) { Write-Output \"Killing PID $\\($p.Id\\) \\($\\($p.ProcessName\\)\\)\"; Stop-Process -Id $p.Id -Force } } } else { Write-Output \"Nothing listening on port 3000\" })",
+      "Bash(curl -s -o /dev/null -w \"compile: %{http_code}\\\\n\" http://localhost:3000)",
+      "Read(//tmp/**)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(pkill -f \"next-server\")",
+      "PowerShell(Get-Process node -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Force -ErrorAction SilentlyContinue)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:3000)",
+      "PowerShell($c = Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue; if \\($c\\) { Write-Output \"Port 3000 IS in use by:\"; $c.OwningProcess | Select-Object -Unique | ForEach-Object { Get-Process -Id $_ -ErrorAction SilentlyContinue | Select-Object Id, ProcessName } } else { Write-Output \"Port 3000 is FREE\" }; Write-Output \"--- node processes ---\"; Get-Process node -ErrorAction SilentlyContinue | Select-Object Id, StartTime)",
+      "PowerShell(Get-Process node -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue; Start-Sleep -Seconds 2; $n = \\(Get-Process node -ErrorAction SilentlyContinue | Measure-Object\\).Count; Write-Output \"Remaining node processes: $n\")",
+      "Bash(curl -s -o /dev/null -w \"page compile: %{http_code}\\\\n\" http://localhost:3000)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(node \"C:\\\\Users\\\\Venky\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\d--zharshaproj-website\\\\1296e429-050d-44ae-b49b-d0080ec403a3\\\\scratchpad\\\\genmusic.js\" \"d:/zharshaproj/website/public/music/wedding.wav\")",
+      "Bash(curl -s -o /dev/null -w \"page: %{http_code}\\\\n\" http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/music/wedding.wav)",
+      "Bash(echo \"music wav: $\\(curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/music/wedding.wav\\)\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/music/Kalyanam.mp3)",
+      "Bash(echo \"Kalyanam.mp3: $\\(curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/music/Kalyanam.mp3\\)\")"
+    ]
+  }
+}
