@@ -69,7 +69,8 @@ export function TilePhoto({
   className?: string;
 }) {
   const [ok, setOk] = useState(true);
-  const showImg = src && ok;
+  const [currentSrc, setCurrentSrc] = useState<string | undefined>(src);
+  const showImg = currentSrc && ok;
   return (
     <div
       className={`relative h-full w-full overflow-hidden ${className}`}
@@ -81,9 +82,17 @@ export function TilePhoto({
       {showImg ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={src}
+          src={currentSrc}
           alt={label}
-          onError={() => setOk(false)}
+          onError={() => {
+            // If we failed and the src ends with .jpg, try .png next
+            if (currentSrc && currentSrc.endsWith(".jpg")) {
+              const png = currentSrc.replace(/\.jpg$/i, ".png");
+              setCurrentSrc(png);
+            } else {
+              setOk(false);
+            }
+          }}
           className="h-full w-full object-cover"
         />
       ) : (

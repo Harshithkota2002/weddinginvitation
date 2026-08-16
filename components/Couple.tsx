@@ -52,15 +52,22 @@ export default function Couple() {
   return (
     <Section id="couple" eyebrow="The Bride & The Groom" title="Two Souls, One Journey">
       <div className="flex flex-col items-stretch gap-8 md:flex-row">
-        <Card
-          role="The Bride"
-          name={wedding.bride.name}
-          parents={wedding.bride.parents}
-          about={wedding.bride.about}
-          initial={wedding.bride.initial}
-          src="/couple/bride.jpg"
-          dir="left"
-        />
+        {(() => {
+          const brideSrc = encodeURI(
+            "/gallery/745e462a-505d-4853-bfcf-dcc8da45e391.png"
+          );
+          return (
+            <Card
+              role="The Bride"
+              name={wedding.bride.name}
+              parents={wedding.bride.parents}
+              about={wedding.bride.about}
+              initial={wedding.bride.initial}
+              src={brideSrc}
+              dir="left"
+            />
+          );
+        })()}
 
         <div className="flex items-center justify-center">
           <motion.span
@@ -72,15 +79,22 @@ export default function Couple() {
           </motion.span>
         </div>
 
-        <Card
-          role="The Groom"
-          name={wedding.groom.name}
-          parents={wedding.groom.parents}
-          about={wedding.groom.about}
-          initial={wedding.groom.initial}
-          src="/couple/groom.jpg"
-          dir="right"
-        />
+        {(() => {
+          const groomSrc = encodeURI(
+            "/gallery/ChatGPT Image Aug 13, 2026, 09_17_05 AM.png"
+          );
+          return (
+            <Card
+              role="The Groom"
+              name={wedding.groom.name}
+              parents={wedding.groom.parents}
+              about={wedding.groom.about}
+              initial={wedding.groom.initial}
+              src={groomSrc}
+              dir="right"
+            />
+          );
+        })()}
       </div>
     </Section>
   );

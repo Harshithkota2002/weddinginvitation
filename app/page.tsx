@@ -6,14 +6,12 @@ import Ambient from "@/components/Ambient";
 import Hero from "@/components/Hero";
 import Countdown from "@/components/Countdown";
 import Couple from "@/components/Couple";
-import Story from "@/components/Story";
+// Story section removed per request
 import Events from "@/components/Events";
-import Gallery from "@/components/Gallery";
 import Venue from "@/components/Venue";
 import Rsvp from "@/components/Rsvp";
 import Family from "@/components/Family";
-import Blessings from "@/components/Blessings";
-import Gift from "@/components/Gift";
+// Blessings & Gift sections removed per request
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import AutoTour from "@/components/AutoTour";
@@ -32,14 +30,10 @@ export default function Home() {
         <Hero />
         <Countdown />
         <Couple />
-        <Story />
         <Events />
-        <Gallery />
         <Venue />
         <Rsvp />
         <Family />
-        <Blessings />
-        <Gift />
       </main>
 
       <Footer />

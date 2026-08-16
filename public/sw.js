@@ -1,5 +1,6 @@
-// Minimal service worker for PWA installability + light offline shell caching.
-const CACHE = "tv-wedding-v1";
+// Service worker for PWA installability + offline shell caching.
+// Keep cache version fresh so updated invitation data is not served from stale pages.
+const CACHE = "tv-wedding-v2";
 const CORE = ["/", "/icon.svg", "/manifest.webmanifest"];
 
 self.addEventListener("install", (e) => {
@@ -21,6 +22,24 @@ self.addEventListener("activate", (e) => {
 self.addEventListener("fetch", (e) => {
   const { request } = e;
   if (request.method !== "GET") return;
+
+  const url = new URL(request.url);
+  const isSameOrigin = url.origin === self.location.origin;
+  const isNavigation = request.mode === "navigate";
+
+  if (isNavigation || (isSameOrigin && (url.pathname === "/" || url.pathname.endsWith(".html")))) {
+    e.respondWith(
+      fetch(request)
+        .then((res) => {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => c.put(request, copy)).catch(() => {});
+          return res;
+        })
+        .catch(() => caches.match(request).then((cached) => cached || caches.match("/")))
+    );
+    return;
+  }
+
   e.respondWith(
     caches.match(request).then(
       (cached) =>

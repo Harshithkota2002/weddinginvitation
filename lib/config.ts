@@ -13,7 +13,7 @@ export const wedding = {
   },
   groom: {
     name: "Venkatesh",
-    parents: "Lakshmi & Ramesh",
+    parents: "T. Padma & T. Muragaiah",
     about:
       "Kind, ambitious and endlessly caring — Venkatesh is the steady hand and the gentle smile she fell for.",
     initial: "V",
@@ -25,7 +25,7 @@ export const wedding = {
   dateLong: "26 August 2026",
   dateShort: "26.08.2026",
 
-  city: "Kota, Andhra Pradesh",
+  city: "Pallipattu, Tamil Nadu 631207, India",
   tagline:
     "We are delighted to invite you to celebrate the beginning of our forever.",
 
@@ -35,11 +35,11 @@ export const wedding = {
 
   // Google Maps
   venue: {
-    name: "Sri Kalyana Mandapam",
-    address: "Main Road, Kota, Andhra Pradesh 524316",
+    name: "Smt & Sri Jyothi Hari Gopal Kalyanamandapam",
+    address: "Pallipattu, Tamil Nadu 631207, India",
     mapEmbed:
-      "https://www.google.com/maps?q=Kota,+Andhra+Pradesh&output=embed",
-    mapLink: "https://www.google.com/maps/search/?api=1&query=Kota+Andhra+Pradesh",
+      "https://www.google.com/maps?q=Smt+%26+Sri+Jyothi+Hari+Gopal+Kalyanamandapam&output=embed",
+    mapLink: "https://maps.app.goo.gl/6w7YUiPwVsckTAN97",
     parking: "Complimentary valet & open parking available beside the venue.",
     accommodation:
       "Rooms have been arranged for outstation guests at nearby hotels. Please mention your stay dates in the RSVP.",
@@ -61,40 +61,14 @@ export const wedding = {
 
 export const events = [
   {
-    key: "haldi",
-    name: "Haldi Ceremony",
-    icon: "🌼",
-    date: "24 August 2026",
-    time: "9:00 AM onwards",
-    venue: "Bride's Residence, Kota",
-    desc: "A joyful morning of turmeric, laughter and golden blessings.",
-  },
-  {
-    key: "mehendi",
-    name: "Mehendi",
-    icon: "🖐️",
-    date: "24 August 2026",
-    time: "5:00 PM onwards",
-    venue: "Garden Lawn, Kota",
-    desc: "Intricate henna, music and colours to adorn the bride.",
-  },
-  {
     key: "sangeet",
     name: "Sangeet",
     icon: "🎶",
     date: "25 August 2026",
     time: "7:00 PM onwards",
-    venue: "Banquet Hall, Kota",
+    venue: "Smt & Sri Jyothi Hari Gopal Kalyanamandapam, Kota",
+    image: "/gallery/745e462a-505d-4853-bfcf-dcc8da45e391.png",
     desc: "An evening of dance, song and celebration with both families.",
-  },
-  {
-    key: "muhurtham",
-    name: "Wedding Muhurtham",
-    icon: "💍",
-    date: "26 August 2026",
-    time: "9:00 AM (Sacred Muhurtham)",
-    venue: "Sri Kalyana Mandapam, Kota",
-    desc: "The sacred union — witness two souls become one.",
   },
   {
     key: "reception",
@@ -102,8 +76,19 @@ export const events = [
     icon: "🥂",
     date: "26 August 2026",
     time: "7:00 PM onwards",
-    venue: "Sri Kalyana Mandapam, Kota",
+    venue: "Smt & Sri Jyothi Hari Gopal Kalyanamandapam, Kota",
+    image: "/gallery/ChatGPT Image Aug 15, 2026, 08_26_16 AM.png",
     desc: "Join us for dinner, blessings and a grand celebration.",
+  },
+  {
+    key: "muhurtham",
+    name: "Wedding Muhurtham (Sacred Muhurtham)",
+    icon: "💍",
+    date: "26 August 2026",
+    time: "4:30 PM to 5:30 PM (Sacred Muhurtham)",
+    venue: "Smt & Sri Jyothi Hari Gopal Kalyanamandapam, Kota",
+    image: "/gallery/ChatGPT Image Aug 15, 2026, 08_29_10 AM.png",
+    desc: "The sacred union — witness two souls become one.",
   },
 ];
 
@@ -137,15 +122,15 @@ export const story = [
 
 export const family = {
   bride: [
-    { role: "Parents", names: "Hemalatha & Soban" },
+    { role: "Daughter of", names: "Hemalatha & Soban" },
+    { role: "Brother of", names: "K. Harshith" },
     { role: "Grandparents", names: "With the blessings of our elders" },
-    { role: "Siblings", names: "Loving brothers & sisters" },
     { role: "Relatives", names: "The extended family & well-wishers" },
   ],
   groom: [
-    { role: "Parents", names: "Lakshmi & Ramesh" },
+    { role: "Son of", names: "T. Padma & T. Muragaiah" },
+    { role: "Brother of", names: "Chandu & Nandu" },
     { role: "Grandparents", names: "With the blessings of our elders" },
-    { role: "Siblings", names: "Loving brothers & sisters" },
     { role: "Relatives", names: "The extended family & well-wishers" },
   ],
 };
@@ -166,10 +151,8 @@ export const gallery = [
 
 export const navLinks = [
   { href: "#home", label: "Home" },
-  { href: "#story", label: "Story" },
   { href: "#events", label: "Events" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#venue", label: "Venue" },
   { href: "#rsvp", label: "RSVP" },
-  { href: "#blessings", label: "Blessings" },
+  // Blessings & Gift nav removed
 ];
+

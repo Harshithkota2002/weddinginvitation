@@ -24,7 +24,7 @@ export default function Section({
   return (
     <section
       id={id}
-      className={`relative px-5 py-20 sm:py-28 ${className}`}
+      className={`relative px-4 py-12 sm:py-20 ${className}`}
       style={alt ? { background: "var(--bg-alt)" } : undefined}
     >
       <div className="mx-auto max-w-6xl">
@@ -36,7 +36,7 @@ export default function Section({
               </p>
             )}
             {title && (
-              <h2 className="section-title text-3xl sm:text-5xl">
+              <h2 className="section-title text-2xl sm:text-4xl">
                 <span className="gold-text">{title}</span>
               </h2>
             )}

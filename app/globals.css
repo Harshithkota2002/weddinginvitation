@@ -104,8 +104,27 @@ body {
   filter: drop-shadow(0 1px 1px rgba(90, 55, 8, 0.18));
   animation: shimmer 5s linear infinite;
 }
+
+.wedding-name {
+  display: inline-block;
+  position: relative;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.gold-shimmer {
+  background: linear-gradient(120deg, #7a4e0a 0%, #d4af37 18%, #fff1b8 35%, #d4af37 48%, #8c5b12 62%, #f5d677 77%, #7a4e0a 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 4px 12px rgba(180, 131, 35, 0.28));
+  animation: shimmer 4.8s linear infinite;
+}
+
 /* brighter, glowing gold on the dark royal background */
-.dark .gold-text {
+.dark .gold-text,
+.dark .gold-shimmer {
   background: linear-gradient(120deg, #d9a53a, #f7e08a, #ffe9a8, #f0cf6e, #d9a53a);
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -122,6 +141,34 @@ body {
   font-family: var(--font-serif), serif;
   font-weight: 600;
   letter-spacing: 0.02em;
+}
+
+.ganesh-badge {
+  position: relative;
+  overflow: hidden;
+  color: #7a4e0a;
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.45), 0 18px 40px -18px rgba(166, 118, 32, 0.7);
+}
+
+.ganesh-badge::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 9999px;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+}
+
+.ganesh-badge::after {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(circle, rgba(240, 217, 140, 0.55), transparent 58%);
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.typing-line {
+  min-height: 1.5em;
+  letter-spacing: 0.08em;
 }
 
 /* ---------- Glassmorphism ---------- */
