@@ -74,7 +74,7 @@ export const events = [
     key: "reception",
     name: "Reception",
     icon: "🥂",
-    date: "26 August 2026",
+    date: "25 August 2026",
     time: "7:00 PM onwards",
     venue: "Smt & Sri Jyothi Hari Gopal Kalyanamandapam, Kota",
     image: "/gallery/ChatGPT Image Aug 15, 2026, 08_26_16 AM.png",
