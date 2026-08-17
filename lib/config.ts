@@ -82,10 +82,10 @@ export const events = [
   },
   {
     key: "muhurtham",
-    name: "Wedding Muhurtham (Sacred Muhurtham)",
+    name: "Wedding Muhurtham ",
     icon: "💍",
     date: "26 August 2026",
-    time: "4:30 PM to 5:30 PM (Sacred Muhurtham)",
+    time: "4:00 AM to 5:30 AM",
     venue: "Smt & Sri Jyothi Hari Gopal Kalyanamandapam, Kota",
     image: "/gallery/ChatGPT Image Aug 15, 2026, 08_29_10 AM.png",
     desc: "The sacred union — witness two souls become one.",
